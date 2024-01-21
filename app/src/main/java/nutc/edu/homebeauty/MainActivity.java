@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     WebView myweb;
-
+    public static final String USER_AGENT = "Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; Nexus One Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         myweb = findViewById(R.id.myWeb);
         myweb.getSettings().setJavaScriptEnabled(true);
-
+        myweb.getSettings().setUserAgentString(USER_AGENT);
         // 設置自定義的 WebViewClient
         myweb.setWebViewClient(new MyWebViewClient());
 

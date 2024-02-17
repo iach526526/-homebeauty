@@ -33,16 +33,18 @@ public class MainActivity extends AppCompatActivity {
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             Uri url = request.getUrl();
             String host = url.getHost();
-            return false;
             // 如果連結指向指定的網站，就在 WebView 中打開
-//            if ("homebeauty.com.tw".equals(host)) {
-//                return false;
-//            }
-//
-//            // 否則，使用外部瀏覽器打開
-//            Intent intent = new Intent(Intent.ACTION_VIEW, url);
-//            startActivity(intent);
-//            return true;
+            if ("homebeauty.com.tw".equals(host)) {
+                return false;
+            } else if (url.toString().startsWith("https://pay.line.me/")) {
+                // 如果連結指向 Line Pay，就使用 Intent 打開外部瀏覽器
+                Intent intent = new Intent(Intent.ACTION_VIEW, url);
+                startActivity(intent);
+                return true;
+            }
+
+            // 其他情況，使用 WebView 處理
+            return false;
         }
     }
     @Override

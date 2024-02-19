@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "317843624980",
+    "project_id": "homebeauty-demo",
+    "storage_bucket": "homebeauty-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317843624980:android:8eb90369d4bac5587ec301",
+        "android_client_info": {
+          "package_name": "tw.com.homebeauty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtemKVIAypDKI3eSNE8r79qUu111Mmllo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

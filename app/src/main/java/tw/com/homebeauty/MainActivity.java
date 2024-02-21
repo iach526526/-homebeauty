@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             // 如果連結指向指定的網站，就在 WebView 中打開
             if ("homebeauty.com.tw".equals(host)) {
                 return false;
-            } else if (url.toString().startsWith("https://pay.line.me/")) {
+            } else if (url.toString().startsWith("http://line.me/R/pay/payment")) {
                 // 如果連結指向 Line Pay，就使用 Intent 打開外部瀏覽器
                 Intent intent = new Intent(Intent.ACTION_VIEW, url);
                 startActivity(intent);

@@ -34,14 +34,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             Uri url = request.getUrl();
-//            String host = url.getHost();
 //            // 如果連結指向指定的網站，就在 WebView 中打開
 ////
             if ("homebeauty.com.tw".equals(request.getUrl().getHost())) {
                 return false;
             }
-            else if (url.toString().contains("line")) {
-                // 如果連結指向 Line Pay，就使用 Intent 打開外部瀏覽器
+            else if (url.toString().contains("line")) {//目前的判斷方式是連結中有line就跳，不知道會不會有什麼奇怪的問題，但目前狀況良好
+                // 如果連結指向 Line，就使用 Intent 打開外部瀏覽器跳轉到line app
                 Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
                 startActivity(intent);
                 return true;

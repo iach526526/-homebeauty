@@ -1,13 +1,14 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'// Add the Google services Gradle plugin
 }
 
 android {
-    namespace 'nutc.edu.homebeauty'
+    namespace 'tw.com.homebeauty'
     compileSdk 34
 
     defaultConfig {
-        applicationId "nutc.edu.homebeauty"
+        applicationId "tw.com.homebeauty"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -29,11 +30,14 @@ android {
 }
 
 dependencies {
-
+    implementation platform('com.google.firebase:firebase-bom:32.7.2')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.google.firebase:firebase-messaging'
+    //line
+//    implementation 'com.linecorp:linesdk:5.0.1'
 }
